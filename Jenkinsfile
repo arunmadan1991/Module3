@@ -31,14 +31,13 @@ pipeline {
         stage(' Unit Testing') {
             steps { 
                 echo "Running Unit Tests"
-                """
             }
         }
 
         stage('Code Analysis') {
             steps {
                 echo "Running Code Analysis"
-                """
+  
             }
         }
 
@@ -47,13 +46,9 @@ pipeline {
                 branch 'develop'
             }
             steps {
-                sh """
                 echo "Building Artifact"
-                """
-
-                sh """
                 echo "Deploying Code"
-                """
+
             }
         }
 
