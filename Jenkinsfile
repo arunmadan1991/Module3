@@ -29,8 +29,7 @@ pipeline {
            }
         }
         stage(' Unit Testing') {
-            steps {
-                sh """
+            steps { 
                 echo "Running Unit Tests"
                 """
             }
@@ -38,7 +37,6 @@ pipeline {
 
         stage('Code Analysis') {
             steps {
-                sh """
                 echo "Running Code Analysis"
                 """
             }
