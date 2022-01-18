@@ -1,7 +1,7 @@
 pipeline {
 
         agent {
-           label 'jenkins-slave'
+           label 'slave'
         }
  
     stages {
@@ -10,7 +10,7 @@ pipeline {
                 checkout([
                     $class: 'GitSCM', 
                     branches: [[name: '*/master']], 
-                    userRemoteConfigs: [[url: 'https://github.com/narendrakumar02/AQTPracticeData.git']]
+                    userRemoteConfigs: [[url: 'https://github.com/arunmadan1991/Module1.git']]
                 ])
             }
         }
