@@ -5,17 +5,11 @@ pipeline {
         }
  
     stages {
-	    stage ('Setup agent') {
-		   steps {
-              node('jenkins-slave') {
-                script {
-                   sh "apt-get install git"
-                }     
-              }
-            }
-        }
         stage('Code Checkout') {
             steps {
+			   script {
+                   sh "apt-get install git"
+                }
                 checkout([
                     $class: 'GitSCM', 
                     branches: [[name: '*/main']], 
