@@ -7,14 +7,10 @@ pipeline {
     stages {
         stage('Code Checkout') {
             steps {
-			script{
-			 sh(returnStdout: true, script: "git --version")
-			}
-                checkout([
-                    $class: 'GitSCM', 
-                    branches: [[name: '*/main']], 
-                    userRemoteConfigs: [[url: 'https://github.com/arunmadan1991/Module3.git']]
-                ])
+			    script{
+			     sh(returnStdout: true, script: "git --version")
+			    }
+               
             }
         }
         stage ('Build') {
