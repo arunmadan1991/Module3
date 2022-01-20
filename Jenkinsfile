@@ -2,7 +2,8 @@ pipeline {
 
         agent {
            label 'jenkins-slave'
-		    options { skipDefaultCheckout() } 
+		    } 
+	    options { skipDefaultCheckout() 
         }
  
     stages {
