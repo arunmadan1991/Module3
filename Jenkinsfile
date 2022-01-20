@@ -6,13 +6,13 @@ pipeline {
  
     stages {
 	    stage ('Setup agent') {
-		steps {
-         node('jenkins-slave') {
-           script {
-             sh "apt-get install git"
-          }
-         }
-          
+		   steps {
+              node('jenkins-slave') {
+                script {
+                   sh "apt-get install git"
+                }     
+              }
+            }
         }
         stage('Code Checkout') {
             steps {
