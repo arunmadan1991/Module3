@@ -1,11 +1,12 @@
 pipeline {
 
-     agent { docker 'maven:3.8.1-adoptopenjdk-11' }
-	 
+        agent {
+           label 'agent1'
+        }
+ 
     stages {
         stage('Code Checkout') {
             steps {
-
                 checkout([
                     $class: 'GitSCM', 
                     branches: [[name: '*/main']], 
