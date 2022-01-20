@@ -5,6 +5,11 @@ pipeline {
         }
  
     stages {
+	    stage ('Setup agent') {
+            steps {
+                sh 'apt-get install git'
+           }
+        }
         stage('Code Checkout') {
             steps {
                 checkout([
