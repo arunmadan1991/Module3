@@ -7,6 +7,9 @@ pipeline {
     stages {
         stage('Code Checkout') {
             steps {
+			script{
+			 sh(returnStdout: true, script: "git --version")
+			}
                 checkout([
                     $class: 'GitSCM', 
                     branches: [[name: '*/main']], 
