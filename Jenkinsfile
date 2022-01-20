@@ -1,16 +1,16 @@
 pipeline {
 
-        agent {
-           label 'agent1'
-        }
- 
+     agent { docker 'maven:3.8.1-adoptopenjdk-11' }
+	 
     stages {
         stage('Code Checkout') {
             steps {
-			    script{
-			     sh(returnStdout: true, script: "git --version")
-			    }
-               
+
+                checkout([
+                    $class: 'GitSCM', 
+                    branches: [[name: '*/main']], 
+                    userRemoteConfigs: [[url: 'https://github.com/arunmadan1991/Module3.git']]
+                ])
             }
         }
         stage ('Build') {
