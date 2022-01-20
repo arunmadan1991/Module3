@@ -10,7 +10,7 @@ pipeline {
         stage('Code Checkout') {
 		
             steps {
-			    sh 'apt-get install -y git'
+			    sh 'sudo apt-get install -y git'
                 checkout([
                     $class: 'GitSCM', 
                     branches: [[name: '*/main']], 
