@@ -7,15 +7,7 @@ pipeline {
         }
  
     stages {
-        stage('Code Checkout') {
-            steps {
-                checkout([
-                    $class: 'GitSCM', 
-                    branches: [[name: '*/main']], 
-                    userRemoteConfigs: [[url: 'https://github.com/arunmadan1991/Module3.git']]
-                ])
-            }
-        }
+
         stage ('Build') {
             steps {
                 sh 'mvn clean package'
